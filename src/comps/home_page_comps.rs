@@ -1,4 +1,4 @@
-// use yew_router::prelude::*;
+use yew_router::prelude::*;
 use yew::prelude::*;
 // use yew::{function_component, html, Html};
 // use stylist::yew::styled_component;
@@ -18,13 +18,15 @@ pub fn MovieSVG() -> Html {
     let svgstyle = use_style!("fill: white; width: 4em; text-align: center;");
 
     html! {
-        <a class={asvg} href={"/"}>
-            <svg
-                class={svgstyle}
-                viewBox="0 0 640 512">
-                <path d="M64 64V352H576V64H64zM0 0H64 576h64V64 352v64H576 64 0V352 64 0zM128 448H512h32v64H512 128 96V448h32z"/>
-            </svg>
-        </a>
+        <div style="display:flex;flex-direction:row;justify-content:center;align-items:center;">
+            <a class={asvg} href={"/"}>
+                <svg
+                    class={svgstyle}
+                    viewBox="0 0 640 512">
+                    <path d="M64 64V352H576V64H64zM0 0H64 576h64V64 352v64H576 64 0V352 64 0zM128 448H512h32v64H512 128 96V448h32z"/>
+                </svg>
+            </a>
+        </div>
 
     }
 }
@@ -136,4 +138,93 @@ pub fn ImageGroupTwo() -> Html {
             </div>
         </>
     )
+}
+
+#[function_component]
+fn CatAction() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Action));
+
+    html!{
+
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Action"}</h1>
+    }
+}
+
+#[function_component]
+fn CatArnold() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Arnold));
+
+    html!{
+
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Arnold"}</h1>
+    }
+}
+
+#[function_component]
+fn CatBruceWillis() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::BruceWillis));
+
+    html!{
+
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Bruce Willis"}</h1>
+    }
+}
+
+#[function_component]
+fn CatCartoons() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Cartoons));
+
+    html!{
+
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Cartoons"}</h1>
+    }
+}
+
+#[function_component]
+pub fn MovieCatagories() -> Html {
+
+    html! {
+        <>
+            <div style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:60px;">
+                <CatAction />
+                <CatArnold />
+                <CatBruceWillis />
+                <CatCartoons />
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Comedy"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Drama"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Documentary"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Fantasy"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Godzilla"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Harry Potter"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Indiana Jones"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"James Bond"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"John Wayne"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"John Wick"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Jurassic Park"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Kings Men"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Men In Black"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Misc"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Nicolas Cage"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Pirates"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Riddick"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Star Wars"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Star Trek"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Super Heroes"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"SciFi"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Tom Cruize"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Transformers"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"Tremors"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"The Rock"}</h1>
+                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:white">{"XMen"}</h1>
+            </div>
+        </>
+    }
 }

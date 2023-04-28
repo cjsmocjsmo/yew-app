@@ -1,19 +1,5 @@
 use yew_router::prelude::*;
-// use yew_router::prelude::use_navigator;
 use yew::prelude::*;
-// use stylist::yew::use_style;
-
-
-#[derive(Clone, Routable, PartialEq)]
-enum Route {
-    #[at("/")]
-    Home,
-    #[at("/action")]
-    Action,
-    #[not_found]
-    #[at("/404")]
-    NotFound,
-}
 
 #[function_component]
 pub fn ImageGroupThree() -> Html {
@@ -39,13 +25,13 @@ pub fn ImageGroupThree() -> Html {
 pub fn ActionPage() -> Html {
     let navigator = use_navigator().unwrap();
 
-    let onclick = Callback::from(move |_| navigator.push(&Route::Home));
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Home));
     html!(
         <>
-            <h1>{"Action Page"}</h1>
+            <h1 style="color:white">{"Action Page"}</h1>
             <button {onclick}>{"Home"}</button>
             <ImageGroupThree />
-
+            <crate::comps::home_page_comps::PlayerControls />
         </>
     )
 }
