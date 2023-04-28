@@ -4,18 +4,37 @@ use stylist::yew::use_style;
 
 #[function_component]
 pub fn MyTitle() -> Html {
-    let h1style = use_style!("font-size:3em;padding:20px;color:#ca25d9;text-align:center;");
+    let h1style = use_style!("
+        font-size: 3em;
+        padding: 20px;
+        color: #ca25d9;
+        text-align: center;
+    ");
 
     html! {<h1 class={h1style} >{ "UTV" }</h1>}
 }
 
 #[function_component]
 pub fn MovieSVG() -> Html {
-    let asvg = use_style!("margin-bottom: 3em;margin-left: auto; margin-right:auto;");
-    let svgstyle = use_style!("fill: white; width: 4em; text-align: center;");
+    let svg_div = use_style!("
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    ");
+    let asvg = use_style!("
+        margin-bottom: 3em;
+        margin-left: auto;
+        margin-right: auto;
+    ");
+    let svgstyle = use_style!("
+        fill: white;
+        width: 4em;
+        text-align: center;
+    ");
 
     html! {
-        <div style="display:flex;flex-direction:row;justify-content:center;align-items:center;">
+        <div class={svg_div}>
             <a class={asvg} href={"/"}>
                 <svg
                     class={svgstyle}
@@ -30,20 +49,32 @@ pub fn MovieSVG() -> Html {
 
 #[function_component]
 fn ImageGroupOne() -> Html {
-    let igo = use_style!(
-        "display:flex;flex-direction:row;flex-wrap:wrap;
-        justify-content:center;align-items:center;margin-bottom:30px;"
-    );
+    let igo = use_style!("
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    ");
 
-    let image_css = use_style!(
-        "display:block;margin-top:10px;margin-right:auto;
-        margin-left:auto;width:200px;border-radius:8px;"
-    );
+    let image_css = use_style!("
+        display: block;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 200px;
+        border-radius: 8px;
+    ");
 
-    let image_css2 = use_style!(
-        "display:block;margin-top:10px;margin-right:auto;
-         margin-left:auto;width:200px;border-radius:8px;"
-    );
+    let image_css2 = use_style!("
+        display: block;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 200px;
+        border-radius: 8px;
+    ");
 
     html! {
         <div class={ igo }>
@@ -63,13 +94,26 @@ fn ImageGroupOne() -> Html {
 
 #[function_component]
 pub fn PlayerControls() -> Html {
-    let player_control_div = use_style!(
-        "display:flex;flex-direction:row;flex-grow:1;width:100%;justify-content:center;align-items:center;"
-    );
+    let player_control_div = use_style!("
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    ");
 
-    let button_div = use_style!("margin:4em;");
+    let button_div = use_style!("
+        margin: 4em;
+    ");
 
-    let svg_style = use_style!("fill: white;background-color:#023b05;width: 2.75em;padding:1em;");
+    let svg_style = use_style!("
+        fill: white;
+        background-color: #023b05;
+        width: 2.75em;
+        padding: 1em;
+    ");
+
     html!(
         <div class={player_control_div}>
             <div class={button_div.clone()}>
@@ -131,9 +175,16 @@ fn CatAction() -> Html {
 
     let onclick = Callback::from(move |_| navigator.push(&crate::Route::Action));
 
+    let action_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
     html!{
 
-        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Action"}</h1>
+        <h1 {onclick} class={action_h1}>{"Action"}</h1>
     }
 }
 
@@ -143,9 +194,16 @@ fn CatArnold() -> Html {
 
     let onclick = Callback::from(move |_| navigator.push(&crate::Route::Arnold));
 
+    let arnold_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
     html!{
 
-        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Arnold"}</h1>
+        <h1 {onclick} class={arnold_h1}>{"Arnold"}</h1>
     }
 }
 
@@ -222,6 +280,80 @@ fn CatFantasy() -> Html {
 }
 
 #[function_component]
+fn CatGodzilla() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Godzilla));
+
+    html!{
+
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Godzilla"}</h1>
+    }
+}
+
+#[function_component]
+fn CatHarryPotter() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::HarryPotter));
+
+    html!{
+
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"HarryPotter"}</h1>
+    }
+}
+
+#[function_component]
+fn CatIndianaJones() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::IndianaJones));
+
+    html!{
+
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Indiana Jones"}</h1>
+    }
+}
+
+#[function_component]
+fn CatJamesBond() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::JamesBond));
+
+    let jamesbond_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+
+        <h1 {onclick} class={jamesbond_h1}>{"James Bond"}</h1>
+    }
+}
+
+#[function_component]
+fn CatJohnWayne() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::JohnWayne));
+
+    let johnwayne_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+
+        <h1 {onclick} class={johnwayne_h1}>{"John Wayne"}</h1>
+    }
+}
+
+#[function_component]
 pub fn MovieCatagories() -> Html {
 
     html! {
@@ -235,11 +367,11 @@ pub fn MovieCatagories() -> Html {
                 <CatDrama />
                 <CatDocumentary />
                 <CatFantasy />
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Godzilla"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Harry Potter"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Indiana Jones"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"James Bond"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"John Wayne"}</h1>
+                <CatGodzilla />
+                <CatHarryPotter />
+                <CatIndianaJones />
+                <CatJamesBond />
+                <CatJohnWayne />
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"John Wick"}</h1>
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Jurassic Park"}</h1>
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Kings Men"}</h1>

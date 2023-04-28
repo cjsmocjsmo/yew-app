@@ -11,16 +11,25 @@ mod comedypage;
 mod dramapage;
 mod documentarypage;
 mod fantasypage;
+mod godzillapage;
+mod harrypotterpage;
+mod indianajonespage;
+mod jamesbondpage;
+mod johnwaynepage;
 
 #[function_component]
 fn MainPage() -> Html {
-    let main_style = use_style!(
-        "height:100vh;width:900px;margin-right:auto;margin-left:auto;"
-    );
+    let main_style = use_style!("
+        height: 100vh;
+        width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+    ");
 
-    let hr_style = use_style!(
-        "width:75%;background-color:white;"
-    );
+    let hr_style = use_style!("
+        width: 75%;
+        background-color: white;
+    ");
 
     html!(
         <>
@@ -63,16 +72,16 @@ enum Route {
     Documentary,
     #[at("/fantasy")]
     Fantasy,
-    // #[at("/godzilla")]
-    // Godzilla,
-    // #[at("/harrypotter")]
-    // HarryPotter,
-    // #[at("/indianajones")]
-    // IndianaJones,
-    // #[at("/jamesbond")]
-    // JamesBond,
-    // #[at("/johnwayne")]
-    // JohnWayne,
+    #[at("/godzilla")]
+    Godzilla,
+    #[at("/harrypotter")]
+    HarryPotter,
+    #[at("/indianajones")]
+    IndianaJones,
+    #[at("/jamesbond")]
+    JamesBond,
+    #[at("/johnwayne")]
+    JohnWayne,
     // #[at("/johnwick")]
     // JohnWick,
     // #[at("/jurassicpark")]
@@ -125,6 +134,11 @@ fn switch(routes: Route) -> Html {
         Route::Drama => html!( <dramapage::DramaPage /> ),
         Route::Documentary => html!( <documentarypage::DocumentaryPage /> ),
         Route::Fantasy => html!( <fantasypage::FantasyPage /> ),
+        Route::Godzilla => html!( <godzillapage::GodzillaPage /> ),
+        Route::HarryPotter => html!( <harrypotterpage::HarryPotterPage /> ),
+        Route::IndianaJones => html!( <indianajonespage::IndianaJonesPage /> ),
+        Route::JamesBond => html!( <jamesbondpage::JamesBondPage /> ),
+        Route::JohnWayne => html!( <johnwaynepage::JohnWaynePage /> ),
         Route::NotFound => html!{ <h1>{ "404" }</h1> },
     }
 }
