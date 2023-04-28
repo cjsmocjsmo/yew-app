@@ -354,6 +354,80 @@ fn CatJohnWayne() -> Html {
 }
 
 #[function_component]
+fn CatJohnWick() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::JohnWick));
+
+    let johnwayne_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+
+        <h1 {onclick} class={johnwayne_h1}>{"John Wick"}</h1>
+    }
+}
+
+#[function_component]
+fn CatJurassicPark() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::JurassicPark));
+
+    let johnwayne_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+
+        <h1 {onclick} class={johnwayne_h1}>{"Jurassic Park"}</h1>
+    }
+}
+
+#[function_component]
+fn CatKingsMen() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::KingsMen));
+
+    let kingsmen_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={kingsmen_h1}>{"Kings Men"}</h1>
+    }
+}
+
+#[function_component]
+fn CatMenInBlack() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::MenInBlack));
+
+    let kingsmen_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={kingsmen_h1}>{"MenIn Black"}</h1>
+    }
+}
+
+#[function_component]
 pub fn MovieCatagories() -> Html {
 
     html! {
@@ -372,10 +446,10 @@ pub fn MovieCatagories() -> Html {
                 <CatIndianaJones />
                 <CatJamesBond />
                 <CatJohnWayne />
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"John Wick"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Jurassic Park"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Kings Men"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Men In Black"}</h1>
+                <CatJohnWick />
+                <CatJurassicPark />
+                <CatKingsMen />
+                <CatMenInBlack />
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Misc"}</h1>
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Nicolas Cage"}</h1>
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Pirates"}</h1>

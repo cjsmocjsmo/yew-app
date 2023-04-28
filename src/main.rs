@@ -16,6 +16,10 @@ mod harrypotterpage;
 mod indianajonespage;
 mod jamesbondpage;
 mod johnwaynepage;
+mod johnwickpage;
+mod jurassicparkpage;
+mod kingsmenpage;
+mod meninblackpage;
 
 #[function_component]
 fn MainPage() -> Html {
@@ -82,14 +86,14 @@ enum Route {
     JamesBond,
     #[at("/johnwayne")]
     JohnWayne,
-    // #[at("/johnwick")]
-    // JohnWick,
-    // #[at("/jurassicpark")]
-    // JurassicPark,
-    // #[at("/kingsmen")]
-    // KingsMen,
-    // #[at("/meninblack")]
-    // MenInBlack,
+    #[at("/johnwick")]
+    JohnWick,
+    #[at("/jurassicpark")]
+    JurassicPark,
+    #[at("/kingsmen")]
+    KingsMen,
+    #[at("/meninblack")]
+    MenInBlack,
     // #[at("/misc")]
     // Misc,
     // #[at("/nicolascage")]
@@ -139,6 +143,11 @@ fn switch(routes: Route) -> Html {
         Route::IndianaJones => html!( <indianajonespage::IndianaJonesPage /> ),
         Route::JamesBond => html!( <jamesbondpage::JamesBondPage /> ),
         Route::JohnWayne => html!( <johnwaynepage::JohnWaynePage /> ),
+        Route::JohnWick => html!( <johnwickpage::JohnWickPage /> ),
+        Route::JurassicPark => html!( <jurassicparkpage::JurassicParkPage /> ),
+        Route::KingsMen => html!( <kingsmenpage::KingsMenPage /> ),
+        Route::MenInBlack => html!( <meninblackpage::MenInBlackPage /> ),
+
         Route::NotFound => html!{ <h1>{ "404" }</h1> },
     }
 }
