@@ -3,24 +3,7 @@ use yew::prelude::*;
 use stylist::yew::use_style;
 
 mod comps;
-mod actionpage;
-mod arnoldpage;
-mod brucewillispage;
-mod cartoonspage;
-mod comedypage;
-mod dramapage;
-mod documentarypage;
-mod fantasypage;
-mod godzillapage;
-mod harrypotterpage;
-mod indianajonespage;
-mod jamesbondpage;
-mod johnwaynepage;
-mod johnwickpage;
-mod jurassicparkpage;
-mod kingsmenpage;
-mod meninblackpage;
-mod miscpage;
+mod movies;
 
 #[function_component]
 fn MainPage() -> Html {
@@ -97,10 +80,10 @@ enum Route {
     MenInBlack,
     #[at("/misc")]
     Misc,
-    // #[at("/nicolascage")]
-    // NicolasCage,
-    // #[at("/pirates")]
-    // Pirates,
+    #[at("/nicolascage")]
+    NicolasCage,
+    #[at("/pirates")]
+    Pirates,
     // #[at("/riddick")]
     // Riddick,
     // #[at("/StarWars")]
@@ -131,24 +114,26 @@ enum Route {
 fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html!{ <MainPage /> },
-        Route::Action => html!{ <actionpage::ActionPage /> },
-        Route::Arnold => html!{ <arnoldpage::ArnoldPage /> },
-        Route::BruceWillis => html!{ <brucewillispage::BruceWillisPage /> },
-        Route::Cartoons => html!{ <cartoonspage::CartoonsPage /> },
-        Route::Comedy => html!( <comedypage::ComedyPage /> ),
-        Route::Drama => html!( <dramapage::DramaPage /> ),
-        Route::Documentary => html!( <documentarypage::DocumentaryPage /> ),
-        Route::Fantasy => html!( <fantasypage::FantasyPage /> ),
-        Route::Godzilla => html!( <godzillapage::GodzillaPage /> ),
-        Route::HarryPotter => html!( <harrypotterpage::HarryPotterPage /> ),
-        Route::IndianaJones => html!( <indianajonespage::IndianaJonesPage /> ),
-        Route::JamesBond => html!( <jamesbondpage::JamesBondPage /> ),
-        Route::JohnWayne => html!( <johnwaynepage::JohnWaynePage /> ),
-        Route::JohnWick => html!( <johnwickpage::JohnWickPage /> ),
-        Route::JurassicPark => html!( <jurassicparkpage::JurassicParkPage /> ),
-        Route::KingsMen => html!( <kingsmenpage::KingsMenPage /> ),
-        Route::MenInBlack => html!( <meninblackpage::MenInBlackPage /> ),
-        Route::Misc => html!( <miscpage::MiscPage /> ),
+        Route::Action => html!{ <movies::actionpage::ActionPage /> },
+        Route::Arnold => html!{ <movies::arnoldpage::ArnoldPage /> },
+        Route::BruceWillis => html!{ <movies::brucewillispage::BruceWillisPage /> },
+        Route::Cartoons => html!{ <movies::cartoonspage::CartoonsPage /> },
+        Route::Comedy => html!( <movies::comedypage::ComedyPage /> ),
+        Route::Drama => html!( <movies::dramapage::DramaPage /> ),
+        Route::Documentary => html!( <movies::documentarypage::DocumentaryPage /> ),
+        Route::Fantasy => html!( <movies::fantasypage::FantasyPage /> ),
+        Route::Godzilla => html!( <movies::godzillapage::GodzillaPage /> ),
+        Route::HarryPotter => html!( <movies::harrypotterpage::HarryPotterPage /> ),
+        Route::IndianaJones => html!( <movies::indianajonespage::IndianaJonesPage /> ),
+        Route::JamesBond => html!( <movies::jamesbondpage::JamesBondPage /> ),
+        Route::JohnWayne => html!( <movies::johnwaynepage::JohnWaynePage /> ),
+        Route::JohnWick => html!( <movies::johnwickpage::JohnWickPage /> ),
+        Route::JurassicPark => html!( <movies::jurassicparkpage::JurassicParkPage /> ),
+        Route::KingsMen => html!( <movies::kingsmenpage::KingsMenPage /> ),
+        Route::MenInBlack => html!( <movies::meninblackpage::MenInBlackPage /> ),
+        Route::Misc => html!( <movies::miscpage::MiscPage /> ),
+        Route::NicolasCage => html!( <movies::nicolascagepage::NicolasCagePage /> ),
+        Route::Pirates => html!( <movies::piratespage::PiratesPage /> ),
 
         Route::NotFound => html!{ <h1>{ "404" }</h1> },
     }
