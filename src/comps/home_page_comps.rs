@@ -428,11 +428,37 @@ fn CatMenInBlack() -> Html {
 }
 
 #[function_component]
+fn CatMisc() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Misc));
+
+    let misc_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={misc_h1}>{"Misc"}</h1>
+    }
+}
+
+#[function_component]
 pub fn MovieCatagories() -> Html {
+    let mov_cat_div = use_style!("
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
+    ");
 
     html! {
         <>
-            <div style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:60px;">
+            <div class={mov_cat_div}>
                 <CatAction />
                 <CatArnold />
                 <CatBruceWillis />
@@ -450,7 +476,7 @@ pub fn MovieCatagories() -> Html {
                 <CatJurassicPark />
                 <CatKingsMen />
                 <CatMenInBlack />
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Misc"}</h1>
+                <CatMisc />
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Nicolas Cage"}</h1>
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Pirates"}</h1>
                 <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Riddick"}</h1>

@@ -20,6 +20,7 @@ mod johnwickpage;
 mod jurassicparkpage;
 mod kingsmenpage;
 mod meninblackpage;
+mod miscpage;
 
 #[function_component]
 fn MainPage() -> Html {
@@ -94,8 +95,8 @@ enum Route {
     KingsMen,
     #[at("/meninblack")]
     MenInBlack,
-    // #[at("/misc")]
-    // Misc,
+    #[at("/misc")]
+    Misc,
     // #[at("/nicolascage")]
     // NicolasCage,
     // #[at("/pirates")]
@@ -147,6 +148,7 @@ fn switch(routes: Route) -> Html {
         Route::JurassicPark => html!( <jurassicparkpage::JurassicParkPage /> ),
         Route::KingsMen => html!( <kingsmenpage::KingsMenPage /> ),
         Route::MenInBlack => html!( <meninblackpage::MenInBlackPage /> ),
+        Route::Misc => html!( <miscpage::MiscPage /> ),
 
         Route::NotFound => html!{ <h1>{ "404" }</h1> },
     }
