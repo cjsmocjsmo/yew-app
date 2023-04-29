@@ -119,6 +119,14 @@ pub fn TVShowsPage() -> Html {
         margin-left: auto;
     ");
 
+    let tv_div_style = use_style!("
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    ");
+
     let hr_style = use_style!("
         width: 75%;
         background-color: white;
@@ -128,24 +136,27 @@ pub fn TVShowsPage() -> Html {
         <>
             <main class={ main_style }>
 
-                <crate::comps::mainpage_comps::MyTitle />
+                
+                    <crate::comps::mainpage_comps::MyTitle />
 
-                <crate::comps::mainpage_comps::MovieSVG />
+                    <crate::comps::mainpage_comps::MovieSVG />
 
-                <hr class={ hr_style } />
+                    <hr class={ hr_style } />
 
-                <CatFantasy />
+                    <div class={tv_div_style}>
 
-                <CatStarTrek />
+                        <CatFantasy />
 
-                <CatStarWars />
+                        <CatStarTrek />
 
-                <CatSciFi />
+                        <CatStarWars />
 
-                <CatMCU />
+                        <CatSciFi />
 
-                <CatWestern />
+                        <CatMCU />
 
+                        <CatWestern />
+                    </div>
 
             </main>
         </>
