@@ -51,7 +51,7 @@ pub fn ArnoldPage() -> Html {
             <h1 style="color:white">{"Arnold Page"}</h1>
             <button {onclick}>{"Home"}</button>
             <ImageGroupT />
-
+            <crate::comps::mainpage_comps::PlayerControls />
         </>
     )
 }

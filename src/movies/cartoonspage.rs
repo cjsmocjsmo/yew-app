@@ -50,7 +50,7 @@ pub fn CartoonsPage() -> Html {
             <h1 style="color:white">{"Cartoons Page"}</h1>
             <button {onclick}>{"Home"}</button>
             <ImageGroupB />
-
+            <crate::comps::mainpage_comps::PlayerControls />
         </>
     )
 }

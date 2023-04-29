@@ -1,3 +1,3 @@
 
 
-pub mod home_page_comps;
+pub mod mainpage_comps;

@@ -50,7 +50,7 @@ pub fn ActionPage() -> Html {
             <h1 style="color:white">{"Action Page"}</h1>
             <button {onclick}>{"Home"}</button>
             <ImageGroupThree />
-            <crate::comps::home_page_comps::PlayerControls />
+            <crate::comps::mainpage_comps::PlayerControls />
         </>
     )
 }

@@ -4,6 +4,8 @@ use stylist::yew::use_style;
 
 mod comps;
 mod movies;
+mod tvshows;
+mod images;
 
 #[function_component]
 fn MainPage() -> Html {
@@ -23,17 +25,20 @@ fn MainPage() -> Html {
         <>
             <main class={ main_style }>
 
-                <comps::home_page_comps::MyTitle />
+                <comps::mainpage_comps::MyTitle />
 
-                <comps::home_page_comps::MovieSVG />
+                <comps::mainpage_comps::TVShowsSVG />
+
 
                 <hr class={ hr_style } />
 
-                <comps::home_page_comps::MovieCatagories />
+                <comps::mainpage_comps::MovieCatagories />
 
-                <comps::home_page_comps::PlayerControls />
+                <comps::mainpage_comps::PlayerControls />
 
-                <comps::home_page_comps::ImageGroupTwo />
+                <comps::mainpage_comps::ImageGroupTwo />
+
+                <images::prehistoric_planet_img_comp::PrehistoricPlanetImgComp />
 
             </main>
         </>
@@ -104,6 +109,21 @@ enum Route {
     TheRock,
     #[at("/xmen")]
     XMen,
+
+    #[at("/tvshows")]
+    TVShows,
+    #[at("/tvfantazy")]
+    TVFantazy,
+    #[at("/tvstartrek")]
+    TVStarTrek,
+    #[at("/tvstarwars")]
+    TVStarWars,
+    #[at("/tvsciti")]
+    TVSciFi,
+    #[at("/mcu")]
+    MCU,
+    #[at("/western")]
+    Western,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -145,6 +165,13 @@ fn switch(routes: Route) -> Html {
         Route::Tremors => html!( <movies::tremorspage::TremorsPage /> ),
         Route::XMen => html!( <movies::xmenpage::XMenPage /> ),
 
+        Route::TVShows => html!( <tvshows::tvshowspage::TVShowsPage /> ),
+        Route::TVFantazy => html!( <tvshows::fantasypage::TVFantasyPage /> ),
+        Route::TVStarTrek => html!( <tvshows::startrekpage::TVStarTrekPage /> ),
+        Route::TVStarWars => html!( <tvshows::starwarspage::TVStarWarsPage /> ),
+        Route::TVSciFi => html!( <tvshows::scifipage::TVSciFiPage /> ),
+        Route::MCU => html!( <tvshows::mcupage::MCUPage /> ),
+        Route::Western => html!( <tvshows::westerenspage::WesternPage /> ),
         Route::NotFound => html!{ <h1>{ "404" }</h1> },
     }
 }

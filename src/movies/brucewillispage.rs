@@ -51,7 +51,7 @@ pub fn BruceWillisPage() -> Html {
             <h1 style="color:white">{"Bruce Willis Page"}</h1>
             <button {onclick}>{"Home"}</button>
             <ImageGroupB />
-
+            <crate::comps::mainpage_comps::PlayerControls />
         </>
     )
 }
