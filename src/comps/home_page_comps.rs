@@ -299,7 +299,7 @@ fn CatHarryPotter() -> Html {
 
     html!{
 
-        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"HarryPotter"}</h1>
+        <h1 {onclick} style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Harry Potter"}</h1>
     }
 }
 
@@ -481,6 +481,185 @@ fn CatPirates() -> Html {
     }
 }
 
+#[function_component]
+fn CatRiddick() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Riddick));
+
+    let riddick_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={riddick_h1}>{"Riddick"}</h1>
+    }
+}
+
+#[function_component]
+fn CatSciFi() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::SciFi));
+
+    let riddick_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={riddick_h1}>{"SciFi"}</h1>
+    }
+}
+
+#[function_component]
+fn CatStarTrek() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::StarTrek));
+
+    let startrek_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={startrek_h1}>{"Star Trek"}</h1>
+    }
+}
+
+#[function_component]
+fn CatStarWars() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::StarWars));
+
+    let starwars_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={starwars_h1}>{"Star Wars"}</h1>
+    }
+}
+
+#[function_component]
+fn CatSuperHeroes() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::SuperHeroes));
+
+    let starwars_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={starwars_h1}>{"Super Heroes"}</h1>
+    }
+}
+
+#[function_component]
+fn CatTremors() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Tremors));
+
+    let starwars_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={starwars_h1}>{"Tremors"}</h1>
+    }
+}
+
+#[function_component]
+fn CatTheRock() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::TheRock));
+
+    let starwars_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={starwars_h1}>{"The Rock"}</h1>
+    }
+}
+
+#[function_component]
+fn CatTomCruize() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::TomCruize));
+
+    let starwars_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={starwars_h1}>{"Tom Cruize"}</h1>
+    }
+}
+
+#[function_component]
+fn CatTransformers() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Transformers));
+
+    let starwars_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={starwars_h1}>{"Transformers"}</h1>
+    }
+}
+
+#[function_component]
+fn CatXMen() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let onclick = Callback::from(move |_| navigator.push(&crate::Route::XMen));
+
+    let starwars_h1 = use_style!("
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 10px;
+        color: blue;
+    ");
+
+    html!{
+        <h1 {onclick} class={starwars_h1}>{"XMen"}</h1>
+    }
+}
 
 #[function_component]
 pub fn MovieCatagories() -> Html {
@@ -516,16 +695,16 @@ pub fn MovieCatagories() -> Html {
                 <CatMisc />
                 <CatNicolasCage />
                 <CatPirates />
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Riddick"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Star Wars"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Star Trek"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Super Heroes"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"SciFi"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Tom Cruize"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Transformers"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"Tremors"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"The Rock"}</h1>
-                <h1 style="font-size:1.5em;padding:10px;margin:10px;color:blue">{"XMen"}</h1>
+                <CatRiddick />
+                <CatStarWars />
+                <CatStarTrek />
+                <CatSuperHeroes />
+                <CatSciFi />
+                <CatTomCruize />
+                <CatTransformers />
+                <CatTremors />
+                <CatTheRock />
+                <CatXMen />
             </div>
         </>
     }

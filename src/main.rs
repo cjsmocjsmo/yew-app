@@ -84,26 +84,26 @@ enum Route {
     NicolasCage,
     #[at("/pirates")]
     Pirates,
-    // #[at("/riddick")]
-    // Riddick,
-    // #[at("/StarWars")]
-    // StarWars,
-    // #[at("/startrek")]
-    // StarTrek,
-    // #[at("/superheroes")]
-    // SuperHeroes,
-    // #[at("/scifi")]
-    // SciFi,
-    // #[at("/tomcruize")]
-    // TomCruize,
-    // #[at("/transformers")]
-    // Transformers,
-    // #[at("/tremors")]
-    // Tremors,
-    // #[at("/therock")]
-    // TheRock,
-    // #[at("/xmen")]
-    // Xmen,
+    #[at("/riddick")]
+    Riddick,
+    #[at("/StarWars")]
+    StarWars,
+    #[at("/startrek")]
+    StarTrek,
+    #[at("/superheroes")]
+    SuperHeroes,
+    #[at("/scifi")]
+    SciFi,
+    #[at("/tomcruize")]
+    TomCruize,
+    #[at("/transformers")]
+    Transformers,
+    #[at("/tremors")]
+    Tremors,
+    #[at("/therock")]
+    TheRock,
+    #[at("/xmen")]
+    XMen,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -134,6 +134,16 @@ fn switch(routes: Route) -> Html {
         Route::Misc => html!( <movies::miscpage::MiscPage /> ),
         Route::NicolasCage => html!( <movies::nicolascagepage::NicolasCagePage /> ),
         Route::Pirates => html!( <movies::piratespage::PiratesPage /> ),
+        Route::Riddick => html!( <movies::riddickpage::RiddickPage /> ),
+        Route::SciFi => html!( <movies::scifipage::SciFiPage /> ),
+        Route::StarTrek => html!( <movies::startrekpage::StarTrekPage /> ),
+        Route::StarWars => html!( <movies::starwarspage::StarWarsPage /> ),
+        Route::SuperHeroes => html!( <movies::superheroespage::SuperHeroesPage /> ),
+        Route::TheRock => html!( <movies::therockpage::TheRockPage /> ),
+        Route::TomCruize => html!( <movies::tomcruizepage::TomCruizePage /> ),
+        Route::Transformers => html!( <movies::transformerspage::TransformersPage /> ),
+        Route::Tremors => html!( <movies::tremorspage::TremorsPage /> ),
+        Route::XMen => html!( <movies::xmenpage::XMenPage /> ),
 
         Route::NotFound => html!{ <h1>{ "404" }</h1> },
     }
