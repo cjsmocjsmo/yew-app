@@ -5,12 +5,7 @@ use yew::prelude::*;
 #[function_component]
 pub fn HouseOfTheDragonImgComp() -> Html {
     let b64_style = use_style!("
-        display: block; 
-        border: 3px solid black;
-        border-radius: 10px;
-        padding: 1em;
-        width: 250px;
-        
+        width: 200px;
     ");
 
     html!(

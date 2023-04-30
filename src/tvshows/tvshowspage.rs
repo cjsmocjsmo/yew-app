@@ -127,11 +127,6 @@ pub fn TVShowsPage() -> Html {
         align-content: center;
     ");
 
-    let hr_style = use_style!("
-        width: 75%;
-        background-color: white;
-    ");
-
     html!(
         <>
             <main class={ main_style }>
@@ -141,22 +136,23 @@ pub fn TVShowsPage() -> Html {
 
                     <crate::comps::mainpage_comps::MovieSVG />
 
-                    <hr class={ hr_style } />
-
-                    <div class={tv_div_style}>
+                    <div class={tv_div_style.clone()}>
 
                         <CatFantasy />
 
                         <CatStarTrek />
 
                         <CatStarWars />
-
+                    </div>
+                    <div class={tv_div_style.clone()}>
                         <CatSciFi />
 
                         <CatMCU />
 
                         <CatWestern />
                     </div>
+
+                    <crate::comps::mainpage_comps::PlayerControls />
 
             </main>
         </>

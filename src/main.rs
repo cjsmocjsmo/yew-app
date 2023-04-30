@@ -16,11 +16,6 @@ fn MainPage() -> Html {
         margin-left: auto;
     ");
 
-    let hr_style = use_style!("
-        width: 75%;
-        background-color: white;
-    ");
-
     html!(
         <>
             <main class={ main_style }>
@@ -29,16 +24,9 @@ fn MainPage() -> Html {
 
                 <comps::mainpage_comps::TVShowsSVG />
 
-
-                <hr class={ hr_style } />
-
                 <comps::mainpage_comps::MovieCatagories />
 
                 <comps::mainpage_comps::PlayerControls />
-
-                <comps::mainpage_comps::ImageGroupTwo />
-
-                <images::prehistoric_planet_img_comp::PrehistoricPlanetImgComp />
 
             </main>
         </>

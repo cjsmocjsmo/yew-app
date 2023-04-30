@@ -9,7 +9,7 @@ pub fn Nineteen23ImgComp() -> Html {
         border: 3px solid black;
         border-radius: 10px;
         padding: 1em;
-        width: 250px;
+        width: 200px;
         
     ");
 

@@ -5,9 +5,7 @@ use stylist::yew::use_style;
 #[function_component]
 pub fn TheLordOfTheRingsImgComp() -> Html {
     let b64_style = use_style!("
-        padding: 1em;
-        width: 250px;
-        border-radius: 8px;
+        width: 200px;
     ");
 
     html!(

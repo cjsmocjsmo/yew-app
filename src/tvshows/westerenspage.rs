@@ -16,17 +16,39 @@ pub fn ImageGroupB() -> Html {
     "
     );
 
+    let img_container = use_style!("
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 210px;
+        height: 400px;
+        background-color: black;
+        border: 3px solid black;
+        border-radius: 8px;
+    ");
+
+    let season_style = use_style!("
+        color:blue;
+        font-size: 1.75em;
+        text-decoration: underline;
+    ");
+
     html!(
         <>
             <div class={ img_div }>
-                <crate::images::nineteen23_img_comp::Nineteen23ImgComp />
+                <div class={img_container}>
+                    <crate::images::nineteen23_img_comp::Nineteen23ImgComp />
+                    <p class={season_style.clone()}>{"1"}</p>
+                </div>
+                
             </div>
         </>
     )
 }
 
 #[function_component]
-fn WBCom() -> Html {
+fn TVBtnComp() -> Html {
     let navigator = use_navigator().unwrap();
 
     let onclick = Callback::from(move |_| navigator.push(&crate::Route::TVShows));
@@ -82,7 +104,7 @@ pub fn WesternPage() -> Html {
             <h1 class={western_style}>{"Westeren Page"}</h1>
             <div class={western_btn_group}>
                 <button {onclick} class={western_button}>{"Movies"}</button>
-                <WBCom />
+                <TVBtnComp />
             </div>
 
 
