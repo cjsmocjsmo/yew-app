@@ -2,24 +2,6 @@ use yew_router::prelude::*;
 use yew::prelude::*;
 use stylist::yew::use_style;
 
-// #[function_component]
-// fn Tv_Btn_Comp() -> Html {
-//     let navigator = use_navigator().unwrap();
-
-//     let onclick = Callback::from(move |_| navigator.push(&crate::Route::TVShows));
-//     let western_button = use_style!("
-//         padding: 8px;
-//         font-size: 1.125em; 
-//         background-color: #ebb917;
-//     ");
-
-//     html!(
-//         <>
-//             <button {onclick} class={western_button}>{"TVShows"}</button>
-//         </>
-//     )
-// }
-
 #[function_component]
 pub fn ImageGroupB() -> Html {
     let img_div = use_style!("
@@ -102,20 +84,26 @@ pub fn TVFantasyPage() -> Html {
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 5em;
-        margin-bottom: 60px;
+        margin-top: 1em;
+        margin-bottom: 1em;
     "
     );
+
+    let button_style = use_style!("
+        padding: 8px;
+        background-color: #ebb917;
+        font-size: 1.125em;
+    ");
     
     html!(
         <>
-            <h2 style="text-align:center;color: #ebb917;">{"Fantasy Page"}</h2>
             <div class={btn_group}>
-                <button {onclick} style="padding:8px;background-color: #ebb917;font-size: 1.125em;">{"Movies"}</button>
+                <button class={button_style.clone()}>{"Music"}</button>
+                <button {onclick} class={button_style.clone()}>{"Movies"}</button>
                 <WBCom />
-            </div>    
+            </div>
+            <h1 style="text-align:center;color:#ebb917;">{"Fantasy"}</h1>
             <ImageGroupB />
-            
         </>
     )
 }

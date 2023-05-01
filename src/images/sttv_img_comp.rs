@@ -2,7 +2,7 @@ use stylist::yew::use_style;
 use yew::prelude::*;
 
 #[function_component]
-pub fn DiscoveryImgComp() -> Html {
+pub fn STTVImgComp() -> Html {
     let b64_style = use_style!("
         width: 200px;
     ");

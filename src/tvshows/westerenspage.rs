@@ -94,19 +94,20 @@ pub fn WesternPage() -> Html {
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 5em;
-        margin-bottom: 60px;
+        margin-top: 1em;
+        margin-bottom: 1em;
     "
     );
 
     html!(
         <>
-            <h1 class={western_style}>{"Westeren Page"}</h1>
+            
             <div class={western_btn_group}>
-                <button {onclick} class={western_button}>{"Movies"}</button>
+                <button class={western_button.clone()}>{"Music"}</button>
+                <button {onclick} class={western_button.clone()}>{"Movies"}</button>
                 <TVBtnComp />
             </div>
-
+            <h1 class={western_style}>{"Westerens"}</h1>
 
             <ImageGroupB />
         </>
