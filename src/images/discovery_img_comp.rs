@@ -3,7 +3,7 @@ use stylist::yew::use_style;
 use yew::prelude::*;
 
 #[function_component]
-pub fn HouseOfTheDragonImgComp() -> Html {
+pub fn DiscoveryImgComp() -> Html {
     let b64_style = use_style!("
         width: 200px;
     ");
