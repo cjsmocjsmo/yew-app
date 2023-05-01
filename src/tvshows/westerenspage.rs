@@ -1,6 +1,6 @@
 use stylist::yew::use_style;
 use yew::prelude::*;
-use yew_router::prelude::*;
+
 
 #[function_component]
 pub fn ImageGroupB() -> Html {
@@ -48,42 +48,12 @@ pub fn ImageGroupB() -> Html {
 }
 
 #[function_component]
-fn TVBtnComp() -> Html {
-    let navigator = use_navigator().unwrap();
-
-    let onclick = Callback::from(move |_| navigator.push(&crate::Route::TVShows));
-    let western_button = use_style!("
-        padding: 8px;
-        font-size: 1.125em; 
-        background-color: #ebb917;
-    ");
-
-    html!(
-        <>
-            <button {onclick} class={western_button}>{"TVShows"}</button>
-        </>
-    )
-}
-
-#[function_component]
 pub fn WesternPage() -> Html {
-    let navigator = use_navigator().unwrap();
-
-    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Home));
 
     let western_style = use_style!(
         "
         text-align: center;
         color: #ebb917;
-    "
-    );
-
-    let western_button = use_style!(
-        "
-        padding:8px;
-        font-size: 1.125em;
-        background-color: #ebb917;
-        
     "
     );
 
@@ -101,14 +71,12 @@ pub fn WesternPage() -> Html {
 
     html!(
         <>
-            
             <div class={western_btn_group}>
-                <button class={western_button.clone()}>{"Music"}</button>
-                <button {onclick} class={western_button.clone()}>{"Movies"}</button>
-                <TVBtnComp />
+                <crate::comps::mainpage_comps::MusicSVG />
+                <crate::comps::mainpage_comps::MovieSVG />
+                <crate::comps::mainpage_comps::TVShowsSVG />
             </div>
             <h1 class={western_style}>{"Westerens"}</h1>
-
             <ImageGroupB />
         </>
     )

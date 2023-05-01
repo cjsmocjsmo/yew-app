@@ -6,6 +6,7 @@ mod comps;
 mod movies;
 mod tvshows;
 mod images;
+mod music;
 
 #[function_component]
 fn MainPage() -> Html {
@@ -16,13 +17,24 @@ fn MainPage() -> Html {
         margin-left: auto;
     ");
 
+    let cat_btn_grp = use_style!("
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    ");
+
     html!(
         <>
             <main class={ main_style }>
 
+                <div class={cat_btn_grp}>
+                    <comps::mainpage_comps::MusicSVG />
+                    <comps::mainpage_comps::TVShowsSVG />
+                </div>
+                
                 <comps::mainpage_comps::MyTitle />
-
-                <comps::mainpage_comps::TVShowsSVG />
 
                 <comps::mainpage_comps::MovieCatagories />
 
@@ -112,6 +124,10 @@ enum Route {
     MCU,
     #[at("/western")]
     Western,
+
+    #[at("/music")]
+    Music,
+
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -160,6 +176,8 @@ fn switch(routes: Route) -> Html {
         Route::TVSciFi => html!( <tvshows::scifipage::TVSciFiPage /> ),
         Route::MCU => html!( <tvshows::mcupage::MCUPage /> ),
         Route::Western => html!( <tvshows::westerenspage::WesternPage /> ),
+
+        Route::Music => html!( <music::music_main::MusicMainPage /> ),
         Route::NotFound => html!{ <h1>{ "404" }</h1> },
     }
 }

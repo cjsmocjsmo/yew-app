@@ -1,4 +1,3 @@
-use yew_router::prelude::*;
 use yew::prelude::*;
 use stylist::yew::use_style;
 
@@ -46,37 +45,14 @@ pub fn ImageGroupB() -> Html {
                     <crate::images::wheel_of_time_img_comp::WheelOfTimeImgComp />
                     <p class={season_style.clone()}>{"1"}</p>
                 </div>
-                
-               
             </div>
         </>
     )
 }
 
 #[function_component]
-fn WBCom() -> Html {
-    let navigator = use_navigator().unwrap();
-
-    let onclick = Callback::from(move |_| navigator.push(&crate::Route::TVShows));
-    let western_button = use_style!("
-        padding: 8px;
-        font-size: 1.125em; 
-        background-color: #ebb917;
-    ");
-
-    html!(
-        <>
-            <button {onclick} class={western_button}>{"TVShows"}</button>
-        </>
-    )
-}
-
-#[function_component]
 pub fn TVFantasyPage() -> Html {
-    let navigator = use_navigator().unwrap();
-
-    let onclick = Callback::from(move |_| navigator.push(&crate::Route::Home));
-    
+       
     let btn_group = use_style!(
         "
         display: flex;
@@ -89,20 +65,19 @@ pub fn TVFantasyPage() -> Html {
     "
     );
 
-    let button_style = use_style!("
-        padding: 8px;
-        background-color: #ebb917;
-        font-size: 1.125em;
+    let h1_style = use_style!("
+        text-align: center;
+        color: #ebb917;
     ");
     
     html!(
         <>
             <div class={btn_group}>
-                <button class={button_style.clone()}>{"Music"}</button>
-                <button {onclick} class={button_style.clone()}>{"Movies"}</button>
-                <WBCom />
+                <crate::comps::mainpage_comps::MusicSVG />
+                <crate::comps::mainpage_comps::MovieSVG />
+                <crate::comps::mainpage_comps::TVShowsSVG />
             </div>
-            <h1 style="text-align:center;color:#ebb917;">{"Fantasy"}</h1>
+            <h1 class={h1_style}>{"Fantasy"}</h1>
             <ImageGroupB />
         </>
     )

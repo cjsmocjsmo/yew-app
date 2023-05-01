@@ -127,28 +127,34 @@ pub fn TVShowsPage() -> Html {
         align-content: center;
     ");
 
+    let cat_btn_grp = use_style!("
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    ");
+
     html!(
         <>
             <main class={ main_style }>
 
-                
+                    <div class={cat_btn_grp}>
+                        <crate::comps::mainpage_comps::MusicSVG />
+                        <crate::comps::mainpage_comps::MovieSVG />
+                    </div>
+
                     <crate::comps::mainpage_comps::MyTitle />
 
-                    <crate::comps::mainpage_comps::MovieSVG />
-
                     <div class={tv_div_style.clone()}>
-
                         <CatFantasy />
-
                         <CatStarTrek />
-
                         <CatStarWars />
                     </div>
+
                     <div class={tv_div_style.clone()}>
                         <CatSciFi />
-
                         <CatMCU />
-
                         <CatWestern />
                     </div>
 
