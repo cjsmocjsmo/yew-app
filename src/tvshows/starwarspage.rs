@@ -3,7 +3,7 @@ use yew::prelude::*;
 // use yew_router::prelude::*;
 
 #[function_component]
-pub fn ImageGroupB() -> Html {
+pub fn StarWarsImgGroup() -> Html {
     let img_div = use_style!(
         "
         display: flex;
@@ -132,7 +132,7 @@ pub fn TVStarWarsPage() -> Html {
                 <crate::comps::mainpage_comps::TVShowsSVG />
             </div>
             <h1 class={h1_style}>{"Star Wars"}</h1>
-            <ImageGroupB />
+            <StarWarsImgGroup />
 
         </>
     )
