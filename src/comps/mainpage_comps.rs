@@ -15,6 +15,29 @@ pub fn MyTitle() -> Html {
 }
 
 #[function_component]
+pub fn MyHeader() -> Html {
+    let btn_group = use_style!(
+        "
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    "
+    );
+
+    html!{
+        <div class={btn_group}>
+            <crate::comps::mainpage_comps::MusicSVG />
+            <crate::comps::mainpage_comps::MovieSVG />
+            <crate::comps::mainpage_comps::TVShowsSVG />
+        </div>
+    }
+}
+
+#[function_component]
 pub fn MovieSVG() -> Html {
     let svg_div = use_style!("
         display:flex;
@@ -115,48 +138,48 @@ pub fn MusicSVG() -> Html {
     }
 }
 
-#[function_component]
-fn ImageGroupOne() -> Html {
-    let igo = use_style!("
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 30px;
-    ");
+// #[function_component]
+// fn ImageGroupOne() -> Html {
+//     let igo = use_style!("
+//         display: flex;
+//         flex-direction: row;
+//         flex-wrap: wrap;
+//         justify-content: center;
+//         align-items: center;
+//         margin-bottom: 30px;
+//     ");
 
-    let image_css = use_style!("
-        display: block;
-        margin-top: 10px;
-        margin-right: auto;
-        margin-left: auto;
-        width: 200px;
-        border-radius: 8px;
-    ");
+//     let image_css = use_style!("
+//         display: block;
+//         margin-top: 10px;
+//         margin-right: auto;
+//         margin-left: auto;
+//         width: 200px;
+//         border-radius: 8px;
+//     ");
 
-    let image_css2 = use_style!("
-        display: block;
-        margin-top: 10px;
-        margin-right: auto;
-        margin-left: auto;
-        width: 200px;
-        border-radius: 8px;
-    ");
+//     let image_css2 = use_style!("
+//         display: block;
+//         margin-top: 10px;
+//         margin-right: auto;
+//         margin-left: auto;
+//         width: 200px;
+//         border-radius: 8px;
+//     ");
 
-    html! {
-        <div class={ igo }>
-            <img class={ image_css }
-                src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22486-main.jpg"
-                alt="video thumbnail" />
+//     html! {
+//         <div class={ igo }>
+//             <img class={ image_css }
+//                 src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22486-main.jpg"
+//                 alt="video thumbnail" />
 
-            <img class={ image_css2 }
-                src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22486-main.jpg"
-                alt="video thumbnail" />
+//             <img class={ image_css2 }
+//                 src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22486-main.jpg"
+//                 alt="video thumbnail" />
 
-        </div>
-    }
-}
+//         </div>
+//     }
+// }
 
 
 

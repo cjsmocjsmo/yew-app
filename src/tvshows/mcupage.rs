@@ -98,17 +98,6 @@ pub fn ImageGroupB() -> Html {
 
 #[function_component]
 pub fn MCUPage() -> Html {
-    let btn_group = use_style!(
-        "
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    "
-    );
 
     let h1_style = use_style!("
         text-align: center;
@@ -117,11 +106,7 @@ pub fn MCUPage() -> Html {
 
     html!(
         <>
-            <div class={btn_group}>
-                <crate::comps::mainpage_comps::MusicSVG />
-                <crate::comps::mainpage_comps::MovieSVG />
-                <crate::comps::mainpage_comps::TVShowsSVG />
-            </div>
+            <crate::comps::mainpage_comps::MyHeader />
             <h1 class={h1_style}>{"MCU"}</h1>
             <ImageGroupB />
         </>

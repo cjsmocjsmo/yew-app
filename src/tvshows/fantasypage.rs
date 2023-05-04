@@ -2,7 +2,7 @@ use yew::prelude::*;
 use stylist::yew::use_style;
 
 #[function_component]
-pub fn ImageGroupB() -> Html {
+pub fn ThumbnailGroup() -> Html {
     let img_div = use_style!("
         display: flex;
         flex-direction: row;
@@ -53,18 +53,6 @@ pub fn ImageGroupB() -> Html {
 #[function_component]
 pub fn TVFantasyPage() -> Html {
        
-    let btn_group = use_style!(
-        "
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    "
-    );
-
     let h1_style = use_style!("
         text-align: center;
         color: #ebb917;
@@ -72,13 +60,9 @@ pub fn TVFantasyPage() -> Html {
     
     html!(
         <>
-            <div class={btn_group}>
-                <crate::comps::mainpage_comps::MusicSVG />
-                <crate::comps::mainpage_comps::MovieSVG />
-                <crate::comps::mainpage_comps::TVShowsSVG />
-            </div>
+            <crate::comps::mainpage_comps::MyHeader />
             <h1 class={h1_style}>{"Fantasy"}</h1>
-            <ImageGroupB />
+            <ThumbnailGroup />
         </>
     )
 }
