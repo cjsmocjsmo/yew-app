@@ -127,18 +127,6 @@ pub fn ImageGroupB() -> Html {
 #[function_component]
 pub fn TVStarTrekPage() -> Html {
 
-    let btn_group = use_style!(
-        "
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    "
-    );
-
     let h1_style = use_style!("
         text-align: center;
         color: #ebb917;
@@ -146,11 +134,7 @@ pub fn TVStarTrekPage() -> Html {
 
     html!(
         <>
-            <div class={btn_group}>
-                <crate::comps::mainpage_comps::MusicSVG />
-                <crate::comps::mainpage_comps::MovieSVG />
-                <crate::comps::mainpage_comps::TVShowsSVG />
-            </div>
+            <crate::comps::mainpage_comps::MyHeader />
             <h1 class={h1_style}>{"Star Trek"}</h1>
             <ImageGroupB />
         </>

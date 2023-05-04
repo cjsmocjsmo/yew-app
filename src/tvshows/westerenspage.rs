@@ -57,25 +57,9 @@ pub fn WesternPage() -> Html {
     "
     );
 
-    let western_btn_group = use_style!(
-        "
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    "
-    );
-
     html!(
         <>
-            <div class={western_btn_group}>
-                <crate::comps::mainpage_comps::MusicSVG />
-                <crate::comps::mainpage_comps::MovieSVG />
-                <crate::comps::mainpage_comps::TVShowsSVG />
-            </div>
+            <crate::comps::mainpage_comps::MyHeader />
             <h1 class={western_style}>{"Westerens"}</h1>
             <ImageGroupB />
         </>

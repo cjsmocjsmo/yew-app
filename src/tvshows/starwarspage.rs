@@ -105,6 +105,7 @@ pub fn StarWarsImgGroup() -> Html {
 
 #[function_component]
 pub fn TVStarWarsPage() -> Html {
+    
     let h1_style = use_style!(
         "
         text-align: center;
@@ -112,25 +113,9 @@ pub fn TVStarWarsPage() -> Html {
     "
     );
 
-    let btn_group = use_style!(
-        "
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    "
-    );
-
     html!(
         <>
-            <div class={btn_group}>
-                <crate::comps::mainpage_comps::MusicSVG />
-                <crate::comps::mainpage_comps::MovieSVG />
-                <crate::comps::mainpage_comps::TVShowsSVG />
-            </div>
+            <crate::comps::mainpage_comps::MyHeader />
             <h1 class={h1_style}>{"Star Wars"}</h1>
             <StarWarsImgGroup />
 
